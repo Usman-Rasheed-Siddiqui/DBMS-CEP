@@ -1,0 +1,169 @@
+
+
+/* ── Full-page two-column layout ── */
+.login-page-layout {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  width: 100%;
+  
+}
+
+/* ── LEFT PANEL ── */
+.login-left-panel {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
+  margin-top: -90px;
+}
+
+.login-left-content {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.login-brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-tooth {
+  font-size: 22px;
+  color: #5c24a5;
+}
+
+.text-type-wrapper {
+  font-size: 28px;
+  font-weight: 700;
+  color: #120F17;
+  line-height: 1.3;
+  min-height: 80px;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.login-left-tagline {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.7;
+}
+
+
+
+/* ── RIGHT PANEL ── */
+.login-right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
+  background: transparent;
+  margin-top: -150px;
+
+}
+
+/* ── Auth card ── */
+.auth-slider-container {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* ── Tab bar ── */
+.auth-tab-bar {
+  display: flex;
+  position: relative;
+  background: #f5f0ff;
+  padding: 6px;
+  border-radius: 20px 20px 0 0;
+  gap: 0;
+}
+
+.auth-tab-pill {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc(50% - 6px);
+  height: calc(100% - 12px);
+  background: linear-gradient(135deg,#1564f7, #9ED14E);
+  border-radius: 14px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  border-radius: 14px;
+  color: #1564f7;
+  transition: color 0.25s;
+}
+
+.auth-tab-btn.active {
+  color: #ffffff;
+}
+
+/* ── Sliding viewport ── */
+.auth-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.auth-track {
+  display: flex;
+  width: 200%;
+  will-change: transform;
+}
+
+.auth-panel {
+  width: 50%;
+  padding: 1.5em;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ── Switch link at bottom ── */
+.auth-switch-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+.auth-switch-btn {
+  background: none;
+  border: none;
+  color: #1564f7;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* ── Responsive: stack vertically on smaller screens ── */
+@media (max-width: 768px) {
+  .login-page-layout {
+    flex-direction: column;
+  }
+
+  .login-left-panel,
+  .login-right-panel {
+    padding: 0 4rem;
+    
+  }
+}

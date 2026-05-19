@@ -1,0 +1,92 @@
+
+/* Main Survey Buttons */
+.sd-btn {
+  padding: 10px 30px !important;
+  background-color: #f6f6f6ff !important;
+  color: #000000ff !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.39) !important;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect (recommended) */
+.sd-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Specific buttons (optional fine control) */
+.sd-navigation__next-btn,
+.sd-navigation__complete-btn {
+  background-color: #f6f6f6ff !important;
+  color: #000000ff !important;
+}
+
+/* Base input styling */
+.sd-input,
+.sd-text,
+.sd-textarea,
+.sd-dropdown,
+.sd-selectbase__control {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.25s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.sd-input:hover,
+.sd-text:hover,
+.sd-textarea:hover,
+.sd-dropdown:hover,
+.sd-selectbase__control:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* 💡 FOCUS EFFECT (important for UX) */
+.sd-input:focus,
+.sd-text:focus,
+.sd-textarea:focus,
+.sd-dropdown:focus,
+.sd-selectbase__control--is-focused {
+  outline: none !important;
+  border-color: #000000 !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown menu styling */
+.sd-selectbase__menu {
+  border-radius: 8px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Dropdown options hover */
+.sd-selectbase__option--is-focused {
+  background-color: #f1f4f6 !important;
+}
+
+/* Back button */
+.sd-navigation__prev-btn {
+  padding: 10px 30px !important;
+  background-color: #f6f6f6ff !important;
+  color: #000000ff !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.39) !important;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.sd-navigation__prev-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+}

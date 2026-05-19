@@ -1,0 +1,136 @@
+/* Core structure */
+.app-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.services-title-wrapper {
+  margin-top: 80px;
+  margin-bottom: 20px; /* Changed from negative to positive */
+  text-align: center;
+  font-size: 60px;
+  font-weight: 800;
+  color: #000000;
+  position: relative;
+  z-index: 10;
+}
+
+ 
+.staff-section-container {
+  width: 100%;
+  position: relative;
+  /* z-index is fine but DO NOT use isolation:isolate or backdrop-filter here —
+     both create a new stacking context that traps and clips sticky/translated children */
+  z-index: 20;
+  padding-top: 40px;
+  display: block;
+  clear: both;
+  /* isolation and backdrop-filter removed intentionally */
+  text-align: center;
+  font-size: 60px;
+  font-weight: 800;
+  color: #000000;
+  position: relative;
+  z-index: 10;
+
+}
+ 
+
+.logo-card-wrapper {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.welcome-text-wrapper {
+  margin-top: 30px;
+}
+
+/* For Services Card */
+.service-card-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  height: 100%;
+}
+
+.service-image-container {
+  flex: 0.5; /* Takes up 50% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-img {
+  width: 100%;       
+  max-width: 350px;  
+  height: 300px;      
+  object-fit: cover; 
+  margin-bottom: 40px;
+}
+
+.service-text-container {
+  flex: 1; /* Takes up 50% */
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.service-number {
+  color: #0070f3; 
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.service-text-container h2 {
+  margin: 10px 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.service-text-container p {
+  line-height: 1.6;
+  color: #000000;
+}
+
+
+.staff-wrapper {
+  margin-left: 520px;
+  max-height: 400px;
+  width: 100px;
+  margin-bottom: 150px;
+}
+
+
+.custom-spotlight-card {
+  margin-left: 160px;
+  height: 200px;
+  width: 1200px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around; /* Spreads items evenly */
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+}
+
+
+/* Optional: Mobile responsiveness */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-wrap: wrap; /* Stacks them on small screens */
+  }
+  .stat-item {
+    width: 45%; /* Two items per row on mobile */
+  }
+}
+
+.custom-spotlight-card-2 {
+  margin-left: 160px;
+  height: 215px;
+  width: 1200px;
+}

@@ -1,0 +1,142 @@
+.cs-wrap {
+  position: relative;
+  width: 100%;
+  user-select: none;
+}
+
+.cs-trigger {
+  width: 100%;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  color: #120F17;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.2s, border-color 0.2s, border-radius 0.15s;
+  box-sizing: border-box;
+}
+
+.cs-trigger:hover {
+  background: rgba(255, 255, 255, 0.38);
+  border-color: rgba(167, 139, 250, 0.6);
+}
+
+.cs-trigger.open {
+  background: rgba(255, 255, 255, 0.42);
+  border-color: rgba(167, 139, 250, 0.8);
+  border-radius: 12px 12px 0 0;
+}
+
+.cs-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
+}
+
+.cs-trigger.open .cs-arrow {
+  transform: rotate(180deg);
+}
+
+.cs-value.placeholder {
+  color: #999;
+}
+
+.cs-menu {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  transform-origin: top center;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.18s ease;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(140, 90, 255, 0.15);
+}
+
+.cs-menu.open {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.cs-option {
+  padding: 11px 16px;
+  font-size: 14px;
+  color: #120F17;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cs-option:last-child {
+  border-bottom: none;
+}
+
+.cs-option:hover {
+  background: rgba(167, 139, 250, 0.18);
+}
+
+.cs-option.selected {
+  background: rgba(167, 139, 250, 0.25);
+  font-weight: 600;
+  color: #6d28d9;
+}
+
+/* Container holding the custom search box */
+.cs-search-box {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Switched to clear transparency */
+  background: rgba(255, 255, 255, 0.2);              /* Blends flawlessly with backdrop glass */
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(10px);                        /* Prevents text overlap visual glitch on scroll */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* The actual input element styling */
+.cs-search-input {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  color: #120F17;
+}
+
+.cs-search-input:focus {
+  border-color: #a78bfa;
+  background: #ffffff;
+}
+
+
+.cs-options-list {
+  max-height: 135px; 
+  overflow-y: auto;  
+}
+
+.cs-no-data {
+  padding: 12px;
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+}

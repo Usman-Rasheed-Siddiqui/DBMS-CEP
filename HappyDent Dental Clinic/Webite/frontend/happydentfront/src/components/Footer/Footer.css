@@ -1,0 +1,17 @@
+/* This will style every element with the .text-reset class */
+.text-reset {
+  padding: 5px 10px;
+  color: #000000ff !important; /* Added !important to override MDB defaults */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block; /* Added this so padding works correctly on <a> tags */
+  text-decoration: none; /* Removes the underline common on links */
+  
+}
+
+/* Optional: Add a hover effect so it feels like a button */
+.text-reset:hover {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}

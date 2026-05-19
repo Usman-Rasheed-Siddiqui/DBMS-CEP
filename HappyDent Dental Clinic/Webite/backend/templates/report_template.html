@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title_text }}</title>
+    <style>
+      @page {
+        size: a4;
+        margin: 1.5cm;
+      }
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: #1e293b;
+        font-size: 11px; /* Dropped by 1px to provide safe text clearance */
+      }
+      .report-title {
+        color: #1e3a8a;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      .summary-table {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .summary-card {
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        padding: 12px;
+        text-align: center;
+      }
+      .card-title {
+        font-size: 10px;
+        color: #64748b;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .card-value {
+        font-size: 16px;
+        font-weight: bold;
+        color: #10b981;
+        margin-top: 5px;
+      }
+
+      /* Main Ledger Data Table */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        table-layout: fixed;
+      }
+      .data-table th {
+        background-color: #1e3a8a;
+        color: #ffffff;
+        padding: 6px 4px;
+        text-align: left;
+        font-weight: bold;
+        font-size: 10px;
+      }
+      .data-table td {
+        padding: 6px 4px;
+        border-bottom: 1px solid #e2e8f0;
+        font-size: 10px;
+      }
+      .data-table tbody tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+
+      .text-wrap {
+        word-wrap: break-word !important;
+        word-break: break-all !important;
+      }
+    </style>
+  </head>
+  <body>
+    <table
+      style="
+        width: 100%;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+      "
+    >
+      <tr>
+        <td
+          style="
+            width: 15%;
+            vertical-align: middle;
+            text-align: left;
+            padding: 0;
+          "
+        >
+          {% if logo_path %}
+          <img
+            src="{{ logo_path }}"
+            width="50"
+            style="display: block"
+            alt="Logo"
+          />
+          {% endif %}
+        </td>
+
+        <td
+          style="
+            width: 50%;
+            vertical-align: middle;
+            text-align: left;
+            padding: 0;
+          "
+        >
+          {% if name_pic_path %}
+          <img
+            src="{{ name_pic_path }}"
+            width="180"
+            style="display: block"
+            alt="HappyDent"
+          />
+          {% else %}
+          <span style="font-size: 22px; font-weight: bold; color: #1e3a8a"
+            >HappyDent Clinic</span
+          >
+          {% endif %}
+        </td>
+
+        <td
+          style="
+            width: 35%;
+            text-align: right;
+            vertical-align: middle;
+            padding: 0;
+          "
+        >
+          <p style="margin: 0; color: #64748b; font-size: 11px">
+            Generated: {{ now_str }}
+          </p>
+          <p
+            style="
+              margin: 4px 0 0 0;
+              color: #1e3a8a;
+              font-size: 10px;
+              font-weight: bold;
+              text-transform: uppercase;
+            "
+          >
+            Scope: {{ scope_str }}
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <h2 class="report-title">{{ title_text }}</h2>
+
+    <table class="summary-table">
+      <tr>
+        {% for card in summary_cards %}
+        <td class="summary-card">
+          <div class="card-title">{{ card.title }}</div>
+          <div class="card-value">{{ card.value }}</div>
+        </td>
+        {% endfor %}
+      </tr>
+    </table>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          {% for header in table_headers %}
+          <th
+            class="text-wrap"
+            style="{% if forloop.counter == 1 %}width: 12%;{% elif forloop.counter == 2 %}width: 25%;{% elif forloop.counter == 4 %}width: 28%;{% else %}width: 15%;{% endif %}"
+          >
+            {{ header }}
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in table_rows %}
+        <tr>
+          {% for cell in row %}
+          <td
+            class="text-wrap"
+            style="{% if forloop.counter == 1 %}width: 12%;{% elif forloop.counter == 2 %}width: 25%;{% elif forloop.counter == 4 %}width: 28%;{% else %}width: 15%;{% endif %}"
+          >
+            {{ cell }}
+          </td>
+          {% endfor %}
+        </tr>
+        {% empty %}
+        <tr>
+          <td
+            colspan="{{ table_headers|length }}"
+            style="text-align: center; color: #94a3b8; padding: 20px"
+          >
+            No records found for this report.
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

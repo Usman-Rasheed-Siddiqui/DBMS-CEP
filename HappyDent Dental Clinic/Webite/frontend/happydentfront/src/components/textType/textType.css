@@ -1,0 +1,48 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  margin-bottom: 30px;
+  margin-top: -30px;
+  
+  /* Enhanced typography */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-weight: 700;  /* Bolder */
+  font-size: 2.5rem;  /* Increased size - 40px equivalent */
+  line-height: 1.3;
+  letter-spacing: -0.02em;  /* Tighter spacing for modern look */
+  
+  /* Optional: Add gradient text effect */
+  background: linear-gradient(135deg, #000000 0%, #1564f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Or if you prefer solid color: */
+  /* color: #ffffff; */
+  
+  /* Smooth rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.text-type-cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+  
+  /* Match the text styling */
+  font-weight: 700;
+  font-size: 2.5rem;  /* Same size as text */
+  line-height: 1.3;
+  
+  /* Make cursor more visible */
+  color: #c299ff;  /* Or white */
+  
+  /* Optional: Add subtle glow to cursor */
+  text-shadow: 0 0 8px rgba(194, 153, 255, 0.5);
+}
+
+.text-type-cursor-hidden {
+  display: none;
+}

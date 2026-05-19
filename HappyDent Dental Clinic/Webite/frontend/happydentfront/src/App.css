@@ -1,0 +1,19 @@
+.app {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+}
